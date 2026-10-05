@@ -1,0 +1,11 @@
+services:
+  clothbot:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      DATA_DIR: /app/data
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./data:/app/data   # база, фото и скачанная модель вырезки
